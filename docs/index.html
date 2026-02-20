@@ -3,74 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LogSolve - 法律文档</title>
+    <title>Support & Privacy - Professional Tools</title>
     <style>
+        :root {
+            --bg-color: #fbfbfd;
+            --card-bg: #ffffff;
+            --text-main: #1d1d1f;
+            --text-secondary: #86868b;
+            --accent-blue: #007AFF;
+            --accent-pink: #FF2D55;
+            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            --card-hover-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --radius-app: 20px;
+            --radius-card: 24px;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            max-width: 800px;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.45;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.6;
-            color: #333;
+            padding: 40px 24px; /* 缩减顶部边距 */
         }
+
+        /* --- Compact Header --- */
+        header {
+            text-align: left; /* 改为左对齐，节省空间 */
+            margin-bottom: 40px;
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
         h1 {
-            color: #007AFF;
-            border-bottom: 2px solid #007AFF;
-            padding-bottom: 10px;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0;
+            color: var(--text-main);
         }
-        .links {
-            margin-top: 40px;
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 400;
         }
-        .link-card {
-            background: #f5f5f7;
-            border-radius: 12px;
-            padding: 20px;
+
+        /* --- Section Header --- */
+        .section-header {
+            margin: 40px 0 24px;
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* --- App Grid: 2 Columns --- */
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 左右排版 */
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-hover-shadow);
+        }
+
+        .app-header {
+            display: flex;
+            gap: 20px;
             margin-bottom: 20px;
-            text-decoration: none;
-            display: block;
-            color: inherit;
-            transition: transform 0.2s, box-shadow 0.2s;
+            align-items: center;
         }
-        .link-card:hover {
-            transform: translateY(-2px);
+
+        .app-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: var(--radius-app);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        .link-card h2 {
-            margin: 0 0 10px 0;
-            color: #007AFF;
-            font-size: 1.5em;
+
+        .logsolve-icon { background: linear-gradient(135deg, #007AFF, #5AC8FA); }
+        .shotcomposer-icon { background: linear-gradient(135deg, #FF2D55, #FF5E5E); }
+
+        .app-title h3 {
+            font-size: 24px;
+            margin: 0 0 4px 0;
         }
-        .link-card p {
+
+        .tagline {
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .logsolve-text { color: var(--accent-blue); }
+        .shotcomposer-text { color: var(--accent-pink); }
+
+        .description {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 20px;
+            flex-grow: 1; /* 填充空间确保按钮对齐 */
+        }
+
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .feature-tag {
+            background: #f5f5f7;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #48484a;
+        }
+
+        /* --- Buttons --- */
+        .btn-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .btn-blue { background: var(--accent-blue); color: white; }
+        .btn-pink { background: var(--accent-pink); color: white; }
+        .btn-outline { border: 1px solid #d2d2d7; color: var(--text-main); }
+        .btn-outline:hover { background: #f5f5f7; }
+
+        /* --- Support Grid --- */
+        .support-section {
+            background: #fff;
+            border-radius: var(--radius-card);
+            padding: 32px;
+            margin-top: 48px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 32px;
+        }
+
+        .support-item h4 {
+            font-size: 17px;
+            margin: 0 0 16px 0;
+            color: var(--text-main);
+        }
+
+        .support-item p, .support-item li {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .support-item ul {
+            padding-left: 18px;
             margin: 0;
-            color: #666;
         }
-        .footer {
+
+        .email-link {
+            font-family: ui-monospace, SFMono-Regular, monospace;
+            background: #f5f5f7;
+            padding: 8px 12px;
+            border-radius: 8px;
+            color: var(--text-main);
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 14px;
+        }
+
+        footer {
             margin-top: 60px;
             text-align: center;
-            color: #999;
-            font-size: 0.9em;
+            color: var(--text-secondary);
+            font-size: 12px;
+            padding-bottom: 20px;
+        }
+
+        @media (max-width: 850px) {
+            .app-grid, .support-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 5px; text-align: center; }
+            .container { padding: 20px 16px; }
         }
     </style>
 </head>
 <body>
-    <h1>LogSolve - 法律文档</h1>
-    <p>欢迎访问 LogSolve 的法律文档页面。请选择您要查看的文档：</p>
 
-    <div class="links">
-        <a href="privacy.html" class="link-card">
-            <h2>隐私政策 / Privacy Policy</h2>
-            <p>了解我们如何保护您的隐私和处理数据</p>
-        </a>
+<div class="container">
+    <header>
+        <h1>开发者作品集</h1>
+        <p class="subtitle">Efficient & Professional Tools for Developers</p>
+    </header>
 
-        <a href="terms.html" class="link-card">
-            <h2>服务条款 / Terms of Service</h2>
-            <p>使用 LogSolve 应用的条款和条件</p>
-        </a>
+    <div class="app-grid">
+        <!-- LogSolve -->
+        <div class="card">
+            <div class="app-header">
+                <div class="app-icon logsolve-icon">L</div>
+                <div class="app-title">
+                    <span class="tagline logsolve-text">Log Analysis</span>
+                    <h3>LogSolve</h3>
+                </div>
+            </div>
+            <p class="description">知识库 + 关键词匹配的专业日志分析工具。支持块搜索上下文、自动时区转换及 Minimap 导航，让日志排查高效精准。</p>
+            <div class="feature-list">
+                <span class="feature-tag">离线处理</span>
+                <span class="feature-tag">双语自适应</span>
+                <span class="feature-tag">Markdown 知识库</span>
+                <span class="feature-tag">正则搜索</span>
+            </div>
+            <div class="btn-group">
+                <a href="LogSolve-privacy.html" class="btn btn-blue">隐私政策</a>
+                <a href="LogSolve-terms.html" class="btn btn-outline">服务条款</a>
+            </div>
+        </div>
+
+        <!-- ShotComposer -->
+        <div class="card">
+            <div class="app-header">
+                <div class="app-icon shotcomposer-icon">S</div>
+                <div class="app-title">
+                    <span class="tagline shotcomposer-text">Screenshot Tool</span>
+                    <h3>ShotComposer</h3>
+                </div>
+            </div>
+            <p class="description">AppStore 预览图制作工具。专为开发者设计，快速生成符合 Apple 规范的精美预览图，支持多设备适配与导出。</p>
+            <div class="feature-list">
+                <span class="feature-tag">离线处理</span>
+                <span class="feature-tag">双语自适应</span>
+                <span class="feature-tag">多设备适配</span>
+                <span class="feature-tag">一键导出</span>
+            </div>
+            <div class="btn-group">
+                <a href="ShotComposer-privacy.html" class="btn btn-pink">隐私政策</a>
+                <a href="ShotComposer-terms.html" class="btn btn-outline">服务条款</a>
+            </div>
+        </div>
     </div>
 
-    <div class="footer">
-        <p>最后更新：2026-02-07</p>
-        <p>© 2026 LogSolve. All rights reserved.</p>
+    <div class="support-section" id="support">
+        <div class="support-grid">
+            <div class="support-item">
+                <h4>📬 支持与反馈 Support</h4>
+                <p>如需帮助或有任何建议，请通过邮件联系：</p>
+                <div class="email-link">study_doc@foxmail.com</div>
+                <p style="margin-top:12px;">响应时间：通常 3 个工作日内</p>
+            </div>
+
+            <div class="support-item">
+                <h4>🛠 支持范围 Scope</h4>
+                <ul>
+                    <li>安装与启动问题</li>
+                    <li>核心功能异常排查</li>
+                    <li>文件导入/导出错误</li>
+                    <li>功能优化建议</li>
+                </ul>
+            </div>
+
+            <div class="support-item">
+                <h4>📝 建议提供信息 Details</h4>
+                <ul>
+                    <li>应用版本号 (App Version)</li>
+                    <li>macOS 系统版本 (macOS Version)</li>
+                    <li>问题描述及复现步骤</li>
+                    <li>截图或日志文件</li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #f0f0f2; font-size: 12px; color: #b0b0b5; text-align: center;">
+            Never share sensitive credentials (passwords, etc.) via email.
+        </div>
     </div>
+
+    <footer>
+        <p>© 2026 Developed by You. All rights reserved.</p>
+    </footer>
+</div>
+
 </body>
 </html>
