@@ -31,48 +31,68 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 40px 24px; /* 缩减顶部边距 */
+            padding: 40px 24px;
         }
 
         /* --- Compact Header --- */
         header {
-            text-align: left; /* 改为左对齐，节省空间 */
-            margin-bottom: 40px;
             display: flex;
-            align-items: baseline;
-            gap: 15px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
             border-bottom: 1px solid #eee;
             padding-bottom: 20px;
         }
 
+        .header-left {
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+        }
+
         h1 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             margin: 0;
             color: var(--text-main);
         }
 
         .subtitle {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-secondary);
             font-weight: 400;
         }
 
-        /* --- Section Header --- */
-        .section-header {
-            margin: 40px 0 24px;
+        /* --- Language Toggle --- */
+        .lang-toggle {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 4px;
+            border-radius: 100px;
+            display: flex;
+            gap: 2px;
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
-        .section-header h2 {
-            font-size: 24px;
+        .lang-btn {
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 12px;
             font-weight: 600;
-            margin: 0;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--text-secondary);
         }
 
-        /* --- App Grid: 2 Columns --- */
+        .lang-btn.active {
+            background: #fff;
+            color: var(--text-main);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* --- App Grid --- */
         .app-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* 左右排版 */
+            grid-template-columns: 1fr 1fr;
             gap: 24px;
         }
 
@@ -94,39 +114,30 @@
 
         .app-header {
             display: flex;
-            gap: 20px;
+            gap: 18px;
             margin-bottom: 20px;
             align-items: center;
         }
 
         .app-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: var(--radius-app);
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
             flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
             color: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         .logsolve-icon { background: linear-gradient(135deg, #007AFF, #5AC8FA); }
         .shotcomposer-icon { background: linear-gradient(135deg, #FF2D55, #FF5E5E); }
 
-        .app-title h3 {
-            font-size: 24px;
-            margin: 0 0 4px 0;
-        }
-
-        .tagline {
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .app-title h3 { font-size: 22px; margin: 0 0 2px 0; }
+        .tagline { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
         .logsolve-text { color: var(--accent-blue); }
         .shotcomposer-text { color: var(--accent-pink); }
 
@@ -134,7 +145,7 @@
             color: var(--text-secondary);
             font-size: 14px;
             margin-bottom: 20px;
-            flex-grow: 1; /* 填充空间确保按钮对齐 */
+            flex-grow: 1;
         }
 
         .feature-list {
@@ -146,19 +157,15 @@
 
         .feature-tag {
             background: #f5f5f7;
-            padding: 6px 12px;
+            padding: 5px 10px;
             border-radius: 8px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 500;
             color: #48484a;
         }
 
         /* --- Buttons --- */
-        .btn-group {
-            display: flex;
-            gap: 12px;
-        }
-
+        .btn-group { display: flex; gap: 10px; }
         .btn {
             flex: 1;
             padding: 10px;
@@ -169,13 +176,12 @@
             text-align: center;
             transition: all 0.2s;
         }
-
         .btn-blue { background: var(--accent-blue); color: white; }
         .btn-pink { background: var(--accent-pink); color: white; }
         .btn-outline { border: 1px solid #d2d2d7; color: var(--text-main); }
         .btn-outline:hover { background: #f5f5f7; }
 
-        /* --- Support Grid --- */
+        /* --- Support Section --- */
         .support-section {
             background: #fff;
             border-radius: var(--radius-card);
@@ -190,22 +196,9 @@
             gap: 32px;
         }
 
-        .support-item h4 {
-            font-size: 17px;
-            margin: 0 0 16px 0;
-            color: var(--text-main);
-        }
-
-        .support-item p, .support-item li {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-        }
-
-        .support-item ul {
-            padding-left: 18px;
-            margin: 0;
-        }
+        .support-item h4 { font-size: 17px; margin: 0 0 16px 0; color: var(--text-main); }
+        .support-item p, .support-item li { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
+        .support-item ul { padding-left: 18px; margin: 0; }
 
         .email-link {
             font-family: ui-monospace, SFMono-Regular, monospace;
@@ -229,8 +222,8 @@
 
         @media (max-width: 850px) {
             .app-grid, .support-grid { grid-template-columns: 1fr; }
-            header { flex-direction: column; gap: 5px; text-align: center; }
-            .container { padding: 20px 16px; }
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            .header-left { flex-direction: column; align-items: center; gap: 5px; }
         }
     </style>
 </head>
@@ -238,8 +231,14 @@
 
 <div class="container">
     <header>
-        <h1>开发者作品集</h1>
-        <p class="subtitle">Efficient & Professional Tools for Developers</p>
+        <div class="header-left">
+            <h1 data-i18n="header-title">开发者作品集</h1>
+            <p class="subtitle" data-i18n="header-subtitle">高效、简洁的专业工具</p>
+        </div>
+        <div class="lang-toggle" onclick="toggleLanguage()">
+            <div id="lang-cn" class="lang-btn active">中文</div>
+            <div id="lang-en" class="lang-btn">English</div>
+        </div>
     </header>
 
     <div class="app-grid">
@@ -248,20 +247,20 @@
             <div class="app-header">
                 <div class="app-icon logsolve-icon">L</div>
                 <div class="app-title">
-                    <span class="tagline logsolve-text">Log Analysis</span>
+                    <span class="tagline logsolve-text" data-i18n="logsolve-category">Log Analysis</span>
                     <h3>LogSolve</h3>
                 </div>
             </div>
-            <p class="description">知识库 + 关键词匹配的专业日志分析工具。支持块搜索上下文、自动时区转换及 Minimap 导航，让日志排查高效精准。</p>
+            <p class="description" data-i18n="logsolve-desc">知识库 + 关键词匹配的专业日志分析工具。支持块搜索上下文、自动时区转换及 Minimap 导航，让日志排查高效精准。</p>
             <div class="feature-list">
-                <span class="feature-tag">离线处理</span>
-                <span class="feature-tag">双语自适应</span>
-                <span class="feature-tag">Markdown 知识库</span>
-                <span class="feature-tag">正则搜索</span>
+                <span class="feature-tag" data-i18n="tag-offline">离线处理</span>
+                <span class="feature-tag" data-i18n="tag-bilingual">双语自适应</span>
+                <span class="feature-tag" data-i18n="tag-kb">Markdown 知识库</span>
+                <span class="feature-tag" data-i18n="tag-regex">正则搜索</span>
             </div>
             <div class="btn-group">
-                <a href="LogSolve-privacy.html" class="btn btn-blue">隐私政策</a>
-                <a href="LogSolve-terms.html" class="btn btn-outline">服务条款</a>
+                <a href="LogSolve-privacy.html" class="btn btn-blue" data-i18n="btn-privacy">隐私政策</a>
+                <a href="LogSolve-terms.html" class="btn btn-outline" data-i18n="btn-terms">服务条款</a>
             </div>
         </div>
 
@@ -270,20 +269,20 @@
             <div class="app-header">
                 <div class="app-icon shotcomposer-icon">S</div>
                 <div class="app-title">
-                    <span class="tagline shotcomposer-text">Screenshot Tool</span>
+                    <span class="tagline shotcomposer-text" data-i18n="shotcomposer-category">Screenshot Tool</span>
                     <h3>ShotComposer</h3>
                 </div>
             </div>
-            <p class="description">AppStore 预览图制作工具。专为开发者设计，快速生成符合 Apple 规范的精美预览图，支持多设备适配与导出。</p>
+            <p class="description" data-i18n="shotcomposer-desc">AppStore 预览图制作工具。专为开发者设计，快速生成符合 Apple 规范的精美预览图，支持多设备适配与导出。</p>
             <div class="feature-list">
-                <span class="feature-tag">离线处理</span>
-                <span class="feature-tag">双语自适应</span>
-                <span class="feature-tag">多设备适配</span>
-                <span class="feature-tag">一键导出</span>
+                <span class="feature-tag" data-i18n="tag-offline">离线处理</span>
+                <span class="feature-tag" data-i18n="tag-bilingual">双语自适应</span>
+                <span class="feature-tag" data-i18n="tag-multi">多设备适配</span>
+                <span class="feature-tag" data-i18n="tag-export">一键导出</span>
             </div>
             <div class="btn-group">
-                <a href="ShotComposer-privacy.html" class="btn btn-pink">隐私政策</a>
-                <a href="ShotComposer-terms.html" class="btn btn-outline">服务条款</a>
+                <a href="ShotComposer-privacy.html" class="btn btn-pink" data-i18n="btn-privacy">隐私政策</a>
+                <a href="ShotComposer-terms.html" class="btn btn-outline" data-i18n="btn-terms">服务条款</a>
             </div>
         </div>
     </div>
@@ -291,34 +290,34 @@
     <div class="support-section" id="support">
         <div class="support-grid">
             <div class="support-item">
-                <h4>📬 支持与反馈 Support</h4>
-                <p>如需帮助或有任何建议，请通过邮件联系：</p>
+                <h4 data-i18n="support-title">📬 支持与反馈</h4>
+                <p data-i18n="support-contact-desc">如需帮助或有任何建议，请通过邮件联系：</p>
                 <div class="email-link">study_doc@foxmail.com</div>
-                <p style="margin-top:12px;">响应时间：通常 3 个工作日内</p>
+                <p style="margin-top:12px;" data-i18n="support-response">响应时间：通常 3 个工作日内</p>
             </div>
 
             <div class="support-item">
-                <h4>🛠 支持范围 Scope</h4>
-                <ul>
-                    <li>安装与启动问题</li>
-                    <li>核心功能异常排查</li>
-                    <li>文件导入/导出错误</li>
-                    <li>功能优化建议</li>
+                <h4 data-i18n="support-scope-title">🛠 支持范围</h4>
+                <ul id="support-scope-list">
+                    <li data-i18n="scope-1">安装与启动问题</li>
+                    <li data-i18n="scope-2">核心功能异常排查</li>
+                    <li data-i18n="scope-3">文件导入/导出错误</li>
+                    <li data-i18n="scope-4">功能优化建议</li>
                 </ul>
             </div>
 
             <div class="support-item">
-                <h4>📝 建议提供信息 Details</h4>
-                <ul>
-                    <li>应用版本号 (App Version)</li>
-                    <li>macOS 系统版本 (macOS Version)</li>
-                    <li>问题描述及复现步骤</li>
-                    <li>截图或日志文件</li>
+                <h4 data-i18n="support-details-title">📝 建议提供信息</h4>
+                <ul id="support-details-list">
+                    <li data-i18n="detail-1">应用版本号</li>
+                    <li data-i18n="detail-2">macOS 系统版本</li>
+                    <li data-i18n="detail-3">问题描述及复现步骤</li>
+                    <li data-i18n="detail-4">截图或日志文件</li>
                 </ul>
             </div>
         </div>
-        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #f0f0f2; font-size: 12px; color: #b0b0b5; text-align: center;">
-            Never share sensitive credentials (passwords, etc.) via email.
+        <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #f0f0f2; font-size: 12px; color: #b0b0b5; text-align: center;" data-i18n="support-safe-tip">
+            请勿在邮件中发送密码等敏感信息。
         </div>
     </div>
 
@@ -326,6 +325,98 @@
         <p>© 2026 Developed by You. All rights reserved.</p>
     </footer>
 </div>
+
+<script>
+    const translations = {
+        'cn': {
+            'header-title': '开发者作品集',
+            'header-subtitle': '高效、简洁的专业工具',
+            'logsolve-category': 'Log Analysis',
+            'logsolve-desc': '知识库 + 关键词匹配的专业日志分析工具。支持块搜索上下文、自动时区转换及 Minimap 导航，让日志排查高效精准。',
+            'shotcomposer-category': 'Screenshot Tool',
+            'shotcomposer-desc': 'AppStore 预览图制作工具。专为开发者设计，快速生成符合 Apple 规范的精美预览图，支持多设备适配与导出。',
+            'tag-offline': '离线处理',
+            'tag-bilingual': '双语自适应',
+            'tag-kb': 'Markdown 知识库',
+            'tag-regex': '正则搜索',
+            'tag-multi': '多设备适配',
+            'tag-export': '一键导出',
+            'btn-privacy': '隐私政策',
+            'btn-terms': '服务条款',
+            'support-title': '📬 支持与反馈',
+            'support-contact-desc': '如需帮助或有任何建议，请通过邮件联系：',
+            'support-response': '响应时间：通常 3 个工作日内',
+            'support-scope-title': '🛠 支持范围',
+            'scope-1': '安装与启动问题',
+            'scope-2': '核心功能异常排查',
+            'scope-3': '文件导入/导出错误',
+            'scope-4': '功能优化建议',
+            'support-details-title': '📝 建议提供信息',
+            'detail-1': '应用版本号',
+            'detail-2': 'macOS 系统版本',
+            'detail-3': '问题描述及复现步骤',
+            'detail-4': '截图或日志文件',
+            'support-safe-tip': '请勿在邮件中发送密码等敏感信息。'
+        },
+        'en': {
+            'header-title': 'Developer Portfolio',
+            'header-subtitle': 'Efficient & Professional Tools',
+            'logsolve-category': 'Log Analysis',
+            'logsolve-desc': 'A professional log analysis tool with Knowledge Base + Keyword Matching. Supports block search, auto timezone conversion, and Minimap for efficient troubleshooting.',
+            'shotcomposer-category': 'Screenshot Tool',
+            'shotcomposer-desc': 'AppStore screenshot creation tool. Quickly generate beautiful screenshots matching Apple\'s guidelines with multi-device support and export.',
+            'tag-offline': 'Offline Processing',
+            'tag-bilingual': 'Bilingual Adaptation',
+            'tag-kb': 'Markdown KB',
+            'tag-regex': 'Regex Search',
+            'tag-multi': 'Multi-device Support',
+            'tag-export': 'One-click Export',
+            'btn-privacy': 'Privacy Policy',
+            'btn-terms': 'Terms of Service',
+            'support-title': '📬 Support & Feedback',
+            'support-contact-desc': 'For help or suggestions, please contact us via email:',
+            'support-response': 'Response Time: Usually within 3 business days',
+            'support-scope-title': '🛠 Support Scope',
+            'scope-1': 'Installation & Launch issues',
+            'scope-2': 'Core feature troubleshooting',
+            'scope-3': 'File import/export errors',
+            'scope-4': 'Feedback & Feature suggestions',
+            'support-details-title': '📝 Recommended Details',
+            'detail-1': 'App version',
+            'detail-2': 'macOS version',
+            'detail-3': 'Description & Steps to reproduce',
+            'detail-4': 'Screenshots or logs',
+            'support-safe-tip': 'Please do not send passwords or sensitive credentials via email.'
+        }
+    };
+
+    let currentLang = localStorage.getItem('lang') || 'cn';
+
+    function updateLanguage() {
+        document.documentElement.lang = currentLang === 'cn' ? 'zh-CN' : 'en';
+        
+        // Update text
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[currentLang][key]) {
+                el.innerText = translations[currentLang][key];
+            }
+        });
+
+        // Update active button state
+        document.getElementById('lang-cn').classList.toggle('active', currentLang === 'cn');
+        document.getElementById('lang-en').classList.toggle('active', currentLang === 'en');
+    }
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'cn' ? 'en' : 'cn';
+        localStorage.setItem('lang', currentLang);
+        updateLanguage();
+    }
+
+    // Initial load
+    window.onload = updateLanguage;
+</script>
 
 </body>
 </html>
