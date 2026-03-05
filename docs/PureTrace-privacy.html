@@ -1,90 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pure Trace - 隐私政策 / Privacy Policy</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            line-height: 1.8;
-            color: #333;
-        }
-        h1, h2, h3 {
-            color: #007AFF;
-        }
-        h1 {
-            border-bottom: 2px solid #007AFF;
-            padding-bottom: 10px;
-        }
-        .language-section {
-            margin: 40px 0;
-            padding: 30px;
-            background: #f5f5f7;
-            border-radius: 12px;
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #007AFF;
-            text-decoration: none;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin: 10px 0;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pure Trace Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --fg: #1f2328;
+      --muted: #59636e;
+      --border: #d0d7de;
+      --link: #0969da;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --fg: #e6edf3;
+        --muted: #9da7b3;
+        --border: #30363d;
+        --link: #58a6ff;
+      }
+    }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+    h1 { font-size: 32px; line-height: 1.25; margin: 0 0 12px; }
+    h2 { font-size: 22px; line-height: 1.35; margin: 32px 0 12px; }
+    p, li { color: var(--fg); }
+    .muted { color: var(--muted); }
+    code {
+      background: color-mix(in srgb, var(--border) 32%, transparent);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-size: 0.92em;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 28px 0;
+    }
+  </style>
 </head>
 <body>
-    <a href="index.html" class="back-link">← 返回首页 / Back to Home</a>
+  <main>
+    <h1>隐私政策 / Privacy Policy</h1>
+    <p class="muted">生效日期（Effective Date）：2026-02-21</p>
 
-    <h1>Pure Trace 隐私政策 / Privacy Policy</h1>
-    <p><strong>最后更新日期 / Last Updated:</strong> 2026-02-21</p>
+    <h2>1. 我们是谁 / Who We Are</h2>
+    <p><code>Pure Trace</code> 是一款离线运行的日志分析工具，用于日志检索、筛选与问题定位。</p>
+    <p><code>Pure Trace</code> is an offline log analysis app for searching, filtering, and troubleshooting logs.</p>
 
-    <div class="language-section">
-        <h2>中文版本</h2>
-        <h3>1. 数据采集与存储</h3>
-        <ul>
-            <li><strong>本地处理</strong>：Pure Trace 处理的所有日志文件均在您的本地设备上进行解析。我们不会将您的日志内容上传到任何服务器。</li>
-            <li><strong>配置信息</strong>：您的自定义关键词、知识库、解析规则等配置均保存在本地沙盒中。</li>
-            <li><strong>iCloud 同步</strong>（可选）：如果您开启了 iCloud 同步功能，您的配置信息（不包括原始日志文件）将通过 Apple 的 iCloud 服务在您的设备间同步。</li>
-        </ul>
-        <h3>2. 权限说明</h3>
-        <ul>
-            <li><strong>文件访问权限</strong>：为了能够读取并分析您选择的日志文件，应用需要获得文件读取权限。</li>
-            <li><strong>网络权限</strong>：Pure Trace 在正常运行期间不需要且不请求网络访问权限（除标准的 Apple 订阅验证及可选的 iCloud 同步外）。</li>
-        </ul>
-        <h3>3. 第三方服务</h3>
-        <p>我们不集成任何第三方广告跟踪或数据分析 SDK。</p>
-        <h3>4. 联系我们</h3>
-        <p>邮箱：study_doc@foxmail.com</p>
-    </div>
+    <h2>2. 数据采集与存储 / Data Collection and Storage</h2>
+    <ul>
+      <li>本地处理：日志文件在设备本地解析，不上传到开发者服务器。</li>
+      <li>配置信息：关键词、知识库、解析规则等保存在本地沙盒。</li>
+      <li>iCloud 同步（可选）：仅同步配置数据（不含原始日志文件），通过 Apple iCloud 进行。</li>
+    </ul>
+    <ul>
+      <li>Local processing: log files are parsed locally and are not uploaded to developer servers.</li>
+      <li>Configurations: keywords, knowledge base, and parsing rules are stored in the local sandbox.</li>
+      <li>Optional iCloud sync: only configuration data (excluding raw logs) is synced via Apple iCloud.</li>
+    </ul>
 
-    <div class="language-section">
-        <h2>English Version</h2>
-        <h3>1. Data Collection and Storage</h3>
-        <ul>
-            <li><strong>Local Processing</strong>: All log files processed by Pure Trace are parsed locally on your device. We do not upload your log content to any servers.</li>
-            <li><strong>Configurations</strong>: Your custom keywords, knowledge base, and parsing rules are stored locally in the app sandbox.</li>
-            <li><strong>iCloud Sync</strong> (Optional): If enabled, your configuration data (excluding raw log files) will sync across your devices via Apple's iCloud service.</li>
-        </ul>
-        <h3>2. Permissions</h3>
-        <ul>
-            <li><strong>File Access</strong>: The app requires permission to read the log files you choose to analyze.</li>
-            <li><strong>Network Access</strong>: Pure Trace does not require or request network access during normal operation (except for standard Apple subscription verification and optional iCloud sync).</li>
-        </ul>
-        <h3>3. Third-party Services</h3>
-        <p>We do not integrate any third-party advertising tracking or data analysis SDKs.</p>
-        <h3>4. Contact Us</h3>
-        <p>Email: study_doc@foxmail.com</p>
-    </div>
+    <h2>3. 权限说明 / Permissions</h2>
+    <ul>
+      <li>文件访问权限：用于读取你主动选择的日志文件。</li>
+      <li>网络权限：仅用于 Apple 订阅验证及可选 iCloud 同步。</li>
+    </ul>
+    <ul>
+      <li>File access: used to read log files you explicitly select.</li>
+      <li>Network access: only for Apple subscription validation and optional iCloud sync.</li>
+    </ul>
+
+    <h2>4. 第三方服务 / Third-Party Services</h2>
+    <p>我们不集成第三方广告跟踪或数据分析 SDK。</p>
+    <p>We do not integrate third-party ad tracking or analytics SDKs.</p>
+
+    <h2>5. 联系我们 / Contact</h2>
+    <p>如有隐私相关问题，请联系：<a href="mailto:study_doc@foxmail.com">study_doc@foxmail.com</a></p>
+    <p>For privacy-related questions, contact: <a href="mailto:study_doc@foxmail.com">study_doc@foxmail.com</a></p>
+  </main>
 </body>
 </html>
