@@ -138,14 +138,20 @@
         .shotcomposer-icon { background: linear-gradient(135deg, #FF2D55, #FF5E5E); }
         .echophase-icon { background: linear-gradient(135deg, #C58B00, #F4C542); }
 
-        .app-title h3 { font-size: 22px; margin: 0; }
         .app-name {
             display: flex;
             flex-direction: column;
             gap: 4px;
         }
-        .app-name-zh {
+        .app-name-primary {
+            font-size: 22px;
+            line-height: 1.2;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+        .app-name-secondary {
             font-size: 13px;
+            line-height: 1.2;
             font-weight: 600;
             color: var(--text-secondary);
             letter-spacing: 0.2px;
@@ -263,9 +269,9 @@
                 <div class="app-icon logsolve-icon">L</div>
                 <div class="app-title">
                     <span class="tagline logsolve-text" data-i18n="logsolve-category">Log Analysis</span>
-                    <div class="app-name">
-                        <h3>Pure Trace</h3>
-                        <span class="app-name-zh">溯源寻踪</span>
+                    <div class="app-name" data-name-en="Pure Trace" data-name-zh="溯源寻踪">
+                        <span class="app-name-primary">Pure Trace</span>
+                        <span class="app-name-secondary">溯源寻踪</span>
                     </div>
                 </div>
             </div>
@@ -288,9 +294,9 @@
                 <div class="app-icon shotcomposer-icon">S</div>
                 <div class="app-title">
                     <span class="tagline shotcomposer-text" data-i18n="shotcomposer-category">Screenshot Tool</span>
-                    <div class="app-name">
-                        <h3>Pure Canvas</h3>
-                        <span class="app-name-zh">映画留白</span>
+                    <div class="app-name" data-name-en="Pure Canvas" data-name-zh="映画留白">
+                        <span class="app-name-primary">Pure Canvas</span>
+                        <span class="app-name-secondary">映画留白</span>
                     </div>
                 </div>
             </div>
@@ -314,9 +320,9 @@
                 <div class="app-icon echophase-icon">E</div>
                 <div class="app-title">
                     <span class="tagline echophase-text" data-i18n="echophase-category">Course Planner</span>
-                    <div class="app-name">
-                        <h3>Echo Phase</h3>
-                        <span class="app-name-zh">循律而行</span>
+                    <div class="app-name" data-name-en="Echo Phase" data-name-zh="循律而行">
+                        <span class="app-name-primary">Echo Phase</span>
+                        <span class="app-name-secondary">循律而行</span>
                     </div>
                 </div>
             </div>
@@ -449,6 +455,23 @@
 
     let currentLang = localStorage.getItem('lang') || 'cn';
 
+    function updateAppNames() {
+        document.querySelectorAll('.app-name').forEach(el => {
+            const englishName = el.getAttribute('data-name-en');
+            const chineseName = el.getAttribute('data-name-zh');
+            const primary = el.querySelector('.app-name-primary');
+            const secondary = el.querySelector('.app-name-secondary');
+
+            if (currentLang === 'cn') {
+                primary.innerText = chineseName;
+                secondary.innerText = englishName;
+            } else {
+                primary.innerText = englishName;
+                secondary.innerText = chineseName;
+            }
+        });
+    }
+
     function updateLanguage() {
         document.documentElement.lang = currentLang === 'cn' ? 'zh-CN' : 'en';
         
@@ -459,6 +482,8 @@
                 el.innerText = translations[currentLang][key];
             }
         });
+
+        updateAppNames();
 
         // Update active button state
         document.getElementById('lang-cn').classList.toggle('active', currentLang === 'cn');
