@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support & Privacy - Professional Tools</title>
+    <title>Support & Privacy | Pure Canvas, Pure Trace, Echo Phase</title>
     <style>
         :root {
             --bg-color: #fbfbfd;
@@ -93,7 +93,7 @@
         /* --- App Grid --- */
         .app-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
         }
 
@@ -138,7 +138,18 @@
         .shotcomposer-icon { background: linear-gradient(135deg, #FF2D55, #FF5E5E); }
         .echophase-icon { background: linear-gradient(135deg, #C58B00, #F4C542); }
 
-        .app-title h3 { font-size: 22px; margin: 0 0 2px 0; }
+        .app-title h3 { font-size: 22px; margin: 0; }
+        .app-name {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .app-name-zh {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            letter-spacing: 0.2px;
+        }
         .tagline { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
         .logsolve-text { color: var(--accent-blue); }
         .shotcomposer-text { color: var(--accent-pink); }
@@ -252,7 +263,10 @@
                 <div class="app-icon logsolve-icon">L</div>
                 <div class="app-title">
                     <span class="tagline logsolve-text" data-i18n="logsolve-category">Log Analysis</span>
-                    <h3>Pure Trace</h3>
+                    <div class="app-name">
+                        <h3>Pure Trace</h3>
+                        <span class="app-name-zh">溯源寻踪</span>
+                    </div>
                 </div>
             </div>
             <p class="description" data-i18n="logsolve-desc">知识库 + 关键词匹配的专业日志分析工具。支持块搜索上下文、自动时区转换及 Minimap 导航，让日志排查高效精准。</p>
@@ -274,7 +288,10 @@
                 <div class="app-icon shotcomposer-icon">S</div>
                 <div class="app-title">
                     <span class="tagline shotcomposer-text" data-i18n="shotcomposer-category">Screenshot Tool</span>
-                    <h3>Pure Canvas</h3>
+                    <div class="app-name">
+                        <h3>Pure Canvas</h3>
+                        <span class="app-name-zh">映画留白</span>
+                    </div>
                 </div>
             </div>
             <p class="description" data-i18n="shotcomposer-desc">AppStore 预览图制作工具。专为开发者设计，快速生成符合 Apple 规范的精美预览图，支持多设备适配与导出。</p>
@@ -297,7 +314,10 @@
                 <div class="app-icon echophase-icon">E</div>
                 <div class="app-title">
                     <span class="tagline echophase-text" data-i18n="echophase-category">Course Planner</span>
-                    <h3>Echo Phase</h3>
+                    <div class="app-name">
+                        <h3>Echo Phase</h3>
+                        <span class="app-name-zh">循律而行</span>
+                    </div>
                 </div>
             </div>
             <p class="description" data-i18n="echophase-desc">本地优先的课程管理工具。支持排课、打卡、赠课进度、提醒与统计，帮助你持续跟踪每一节课时。</p>
