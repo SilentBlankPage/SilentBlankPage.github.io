@@ -12,6 +12,7 @@
             --text-secondary: #86868b;
             --accent-blue: #007AFF;
             --accent-pink: #FF2D55;
+            --accent-gold: #C58B00;
             --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
             --card-hover-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             --radius-app: 20px;
@@ -92,7 +93,7 @@
         /* --- App Grid --- */
         .app-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 24px;
         }
 
@@ -135,11 +136,13 @@
 
         .logsolve-icon { background: linear-gradient(135deg, #007AFF, #5AC8FA); }
         .shotcomposer-icon { background: linear-gradient(135deg, #FF2D55, #FF5E5E); }
+        .echoflow-icon { background: linear-gradient(135deg, #C58B00, #F4C542); }
 
         .app-title h3 { font-size: 22px; margin: 0 0 2px 0; }
         .tagline { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
         .logsolve-text { color: var(--accent-blue); }
         .shotcomposer-text { color: var(--accent-pink); }
+        .echoflow-text { color: var(--accent-gold); }
 
         .description {
             color: var(--text-secondary);
@@ -178,6 +181,7 @@
         }
         .btn-blue { background: var(--accent-blue); color: white; }
         .btn-pink { background: var(--accent-pink); color: white; }
+        .btn-gold { background: var(--accent-gold); color: white; }
         .btn-outline { border: 1px solid #d2d2d7; color: var(--text-main); }
         .btn-outline:hover { background: #f5f5f7; }
 
@@ -245,7 +249,7 @@
         <!-- Pure Trace -->
         <div class="card">
             <div class="app-header">
-                <div class="app-icon logsolve-icon">T</div>
+                <div class="app-icon logsolve-icon">L</div>
                 <div class="app-title">
                     <span class="tagline logsolve-text" data-i18n="logsolve-category">Log Analysis</span>
                     <h3>Pure Trace</h3>
@@ -267,7 +271,7 @@
         <!-- Pure Canvas -->
         <div class="card">
             <div class="app-header">
-                <div class="app-icon shotcomposer-icon">C</div>
+                <div class="app-icon shotcomposer-icon">S</div>
                 <div class="app-title">
                     <span class="tagline shotcomposer-text" data-i18n="shotcomposer-category">Screenshot Tool</span>
                     <h3>Pure Canvas</h3>
@@ -283,6 +287,29 @@
             <div class="btn-group">
                 <a href="PureCanvas-privacy.html" class="btn btn-pink" data-i18n="btn-privacy">隐私政策</a>
                 <a href="PureCanvas-terms.html" class="btn btn-outline" data-i18n="btn-terms">服务条款</a>
+            </div>
+        </div>
+
+
+        <!-- Echo Flow -->
+        <div class="card">
+            <div class="app-header">
+                <div class="app-icon echoflow-icon">E</div>
+                <div class="app-title">
+                    <span class="tagline echoflow-text" data-i18n="echoflow-category">Course Planner</span>
+                    <h3>Echo Flow</h3>
+                </div>
+            </div>
+            <p class="description" data-i18n="echoflow-desc">本地优先的课程管理工具。支持排课、打卡、赠课进度、提醒与统计，帮助你持续跟踪每一节课时。</p>
+            <div class="feature-list">
+                <span class="feature-tag" data-i18n="tag-local-first">本地优先</span>
+                <span class="feature-tag" data-i18n="tag-bilingual">双语自适应</span>
+                <span class="feature-tag" data-i18n="tag-reminder">课程提醒</span>
+                <span class="feature-tag" data-i18n="tag-stats">统计分析</span>
+            </div>
+            <div class="btn-group">
+                <a href="EchoFlow-privacy.html" class="btn btn-gold" data-i18n="btn-privacy">隐私政策</a>
+                <a href="EchoFlow-terms.html" class="btn btn-outline" data-i18n="btn-terms">服务条款</a>
             </div>
         </div>
     </div>
@@ -335,12 +362,17 @@
             'logsolve-desc': '知识库 + 关键词匹配的专业日志分析工具。支持块搜索上下文、自动时区转换及 Minimap 导航，让日志排查高效精准。',
             'shotcomposer-category': 'Screenshot Tool',
             'shotcomposer-desc': 'AppStore 预览图制作工具。专为开发者设计，快速生成符合 Apple 规范的精美预览图，支持多设备适配与导出。',
+            'echoflow-category': 'Course Planner',
+            'echoflow-desc': '本地优先的课程管理工具。支持排课、打卡、赠课进度、提醒与统计，帮助你持续跟踪每一节课时。',
             'tag-offline': '离线处理',
             'tag-bilingual': '双语自适应',
             'tag-kb': 'Markdown 知识库',
             'tag-regex': '正则搜索',
             'tag-multi': '多设备适配',
             'tag-export': '一键导出',
+            'tag-local-first': '本地优先',
+            'tag-reminder': '课程提醒',
+            'tag-stats': '统计分析',
             'btn-privacy': '隐私政策',
             'btn-terms': '服务条款',
             'support-title': '📬 支持与反馈',
@@ -365,12 +397,17 @@
             'logsolve-desc': 'A professional log analysis tool with Knowledge Base + Keyword Matching. Supports block search, auto timezone conversion, and Minimap for efficient troubleshooting.',
             'shotcomposer-category': 'Screenshot Tool',
             'shotcomposer-desc': 'AppStore screenshot creation tool. Quickly generate beautiful screenshots matching Apple\'s guidelines with multi-device support and export.',
+            'echoflow-category': 'Course Planner',
+            'echoflow-desc': 'A local-first course manager with scheduling, check-ins, gift progress, reminders, and statistics for every lesson.',
             'tag-offline': 'Offline Processing',
             'tag-bilingual': 'Bilingual Adaptation',
             'tag-kb': 'Markdown KB',
             'tag-regex': 'Regex Search',
             'tag-multi': 'Multi-device Support',
             'tag-export': 'One-click Export',
+            'tag-local-first': 'Local-first',
+            'tag-reminder': 'Class Reminders',
+            'tag-stats': 'Statistics',
             'btn-privacy': 'Privacy Policy',
             'btn-terms': 'Terms of Service',
             'support-title': '📬 Support & Feedback',
