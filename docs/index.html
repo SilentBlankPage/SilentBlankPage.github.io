@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support & Privacy | Pure Canvas, Pure Trace, Echo Phase</title>
+    <title>Support & Privacy | Pure Canvas, Pure Trace, Echo Phase, Pure Archive</title>
     <style>
         :root {
             --bg-color: #fbfbfd;
@@ -13,6 +13,7 @@
             --accent-blue: #007AFF;
             --accent-pink: #FF2D55;
             --accent-gold: #C58B00;
+            --accent-green: #1D8F6A;
             --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
             --card-hover-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             --radius-app: 20px;
@@ -137,6 +138,7 @@
         .logsolve-icon { background: linear-gradient(135deg, #007AFF, #5AC8FA); }
         .shotcomposer-icon { background: linear-gradient(135deg, #FF2D55, #FF5E5E); }
         .echophase-icon { background: linear-gradient(135deg, #C58B00, #F4C542); }
+        .archive-icon { background: linear-gradient(135deg, #1D8F6A, #56C7A5); }
 
         .app-name {
             display: flex;
@@ -160,6 +162,7 @@
         .logsolve-text { color: var(--accent-blue); }
         .shotcomposer-text { color: var(--accent-pink); }
         .echophase-text { color: var(--accent-gold); }
+        .archive-text { color: var(--accent-green); }
 
         .description {
             color: var(--text-secondary);
@@ -338,6 +341,31 @@
                 <a href="EchoPhase-terms.html" class="btn btn-outline" data-i18n="btn-terms">服务条款</a>
             </div>
         </div>
+
+        <!-- Pure Archive -->
+        <div class="card">
+            <div class="app-header">
+                <div class="app-icon archive-icon">A</div>
+                <div class="app-title">
+                    <span class="tagline archive-text" data-i18n="archive-category">Metadata Workspace</span>
+                    <div class="app-name" data-name-en="Pure Archive" data-name-zh="辞章格律">
+                        <span class="app-name-primary">Pure Archive</span>
+                        <span class="app-name-secondary">辞章格律</span>
+                    </div>
+                </div>
+            </div>
+            <p class="description" data-i18n="archive-desc">面向开发者的本地文档工作台，集中管理 App Store 元数据、数字资产、本地化与截图导出流程。</p>
+            <div class="feature-list">
+                <span class="feature-tag" data-i18n="tag-local-doc">本地文档</span>
+                <span class="feature-tag" data-i18n="tag-metadata">元数据管理</span>
+                <span class="feature-tag" data-i18n="tag-mcp">MCP 协同</span>
+                <span class="feature-tag" data-i18n="tag-export">一键导出</span>
+            </div>
+            <div class="btn-group">
+                <a href="PureArchive-privacy.html" class="btn btn-blue" data-i18n="btn-privacy">隐私政策</a>
+                <a href="PureArchive-terms.html" class="btn btn-outline" data-i18n="btn-terms">服务条款</a>
+            </div>
+        </div>
     </div>
 
     <div class="support-section" id="support">
@@ -390,6 +418,8 @@
             'shotcomposer-desc': 'AppStore 预览图制作工具。专为开发者设计，快速生成符合 Apple 规范的精美预览图，支持多设备适配与导出。',
             'echophase-category': 'Course Planner',
             'echophase-desc': '本地优先的课程管理工具。支持排课、打卡、赠课进度、提醒与统计，帮助你持续跟踪每一节课时。',
+            'archive-category': 'Metadata Workspace',
+            'archive-desc': '面向开发者的本地文档工作台，集中管理 App Store 元数据、数字资产、本地化与截图导出流程。',
             'tag-offline': '离线处理',
             'tag-bilingual': '双语自适应',
             'tag-kb': 'Markdown 知识库',
@@ -397,6 +427,9 @@
             'tag-multi': '多设备适配',
             'tag-export': '一键导出',
             'tag-local-first': '本地优先',
+            'tag-local-doc': '本地文档',
+            'tag-metadata': '元数据管理',
+            'tag-mcp': 'MCP 协同',
             'tag-reminder': '课程提醒',
             'tag-stats': '统计分析',
             'btn-privacy': '隐私政策',
@@ -425,6 +458,8 @@
             'shotcomposer-desc': 'AppStore screenshot creation tool. Quickly generate beautiful screenshots matching Apple\'s guidelines with multi-device support and export.',
             'echophase-category': 'Course Planner',
             'echophase-desc': 'A local-first course manager with scheduling, check-ins, gift progress, reminders, and statistics for every lesson.',
+            'archive-category': 'Metadata Workspace',
+            'archive-desc': 'A local document workspace for developers to manage App Store metadata, digital assets, localization content, and screenshot export flows.',
             'tag-offline': 'Offline Processing',
             'tag-bilingual': 'Bilingual Adaptation',
             'tag-kb': 'Markdown KB',
@@ -432,6 +467,9 @@
             'tag-multi': 'Multi-device Support',
             'tag-export': 'One-click Export',
             'tag-local-first': 'Local-first',
+            'tag-local-doc': 'Local Documents',
+            'tag-metadata': 'Metadata Management',
+            'tag-mcp': 'MCP Workflow',
             'tag-reminder': 'Class Reminders',
             'tag-stats': 'Statistics',
             'btn-privacy': 'Privacy Policy',
